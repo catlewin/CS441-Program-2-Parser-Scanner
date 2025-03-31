@@ -76,6 +76,12 @@
        (if (and (not (eof-object? (peek))) (equal? (peek) #\=))
            (begin (next) (advance-position (peek)) (make-token COMPARE-TOKEN "==" curr-line curr-col))
            (make-token ASSIGN-TOKEN #f curr-line curr-col))]
+      [(equal? c #\!)
+        (next)
+        (advance-position c)
+        (if (and (not (eof-object? (peek))) (equal? (peek) #\=))
+            (begin (next) (advance-position (peek)) (make-token COMPARE-TOKEN "!=" curr-line curr-col))
+            (error (format "Invalid character: ! at line ~a, column ~a" curr-line curr-col)))]
       
       [(equal? c #\>) 
        (next)
