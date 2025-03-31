@@ -241,4 +241,4 @@
 (define (parse-file filename) (parse-program-text (port->string (open-input-file filename))))
 
 
-(parse-file "/Users/Catherine/Desktop/ParserInput-1/file1.txt")
+(parse-file "/Users/X/Desktop/ParserInput-1/file1.txt")
