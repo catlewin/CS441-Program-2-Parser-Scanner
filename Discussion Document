@@ -1,0 +1,36 @@
+Cat Lewin
+Professor Brian Hare
+CS 441
+31 March 2025
+Program 2: Scanner/Parser
+
+This program focused on using LLMs to create a scanner/parser for the given grammar below. Due to the free access limitations on models, ChatGPT, DeepSeek, & Claude were used in this program.
+
+Grammar:
+  program -> {stmt_list} $$ 
+  stmt_list -> stmt stmt_list | epsilon 
+  stmt -> id = expr;
+            | if (expr) stmt_list endif;
+            | read id;
+            | write expr;  
+  expr -> id etail | num etail
+  etail -> + expr 
+           | - expr 
+           | compare expr
+           | epsilon 
+  id -> [a-zA-Z]+ 
+  num -> numsign digit digit* 
+  numsign -> + | - | epsilon 
+  compare -> < | <= | > | >= | == | !=
+
+I went through many drafts of the program where I would hit one of two walls: 
+  1. The parentheses did not match and once they did match functions were out of range or uncallable (DrRacket didn’t want to use parser-tools/lex)
+  2. In the process of using AI to debug, I would run out of free access to the model, thus losing momentum on figuring out the problem.
+
+All the models seem to be poor at matching brackets and parentheses, so I moved to doing this myself and focused on using them for specific error messages. After a few failed attempts, I started off prompting ChatGPT to first create a tokenizer for the grammar and then the recursive descent parser. This seemed to better format the program than just requesting the parser first. From this draft, I simply needed to debug and make sure the parser matched the hierarchy of the grammar.
+
+ChatGPT’s interface is great in creating a “canvas” for the current program when using specific models, but I found the changes occasionally did not carry over multiple drafts. This model also caused the free access to run out faster. Without this model however, the recommended modifications rarely indicated what line to change, simply providing the modified code. This left me going line by line looking where to add the modification and then debugging the number of parentheses. Claude did a better job of indicating location of changes and providing explanations for said changes, but more quickly ran out of free access.
+
+Compared to the first program, the LLMs had more errors to go through to get to a semi-functioning program. I would guess this is due to the LLMs not using Racket as much nor being used to write parsers. That said, I was impressed by all 3 models' ability to pick up where the last model left off.
+
+Using all 3 models allowed me to continue working when free access posed a barrier. However, all three still struggle to match parentheses. Further, tracing prompts and code generation across 3 platforms that do not provide time logs proved difficult. 
