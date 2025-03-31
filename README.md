@@ -61,8 +61,7 @@ Below is the output and the AI prompts & generated code.
 
 # AI Prompts & Generated code:
 
-Note: Due to free access limitations on models, both Claude.ai & ChatGPT were used in this program.
-DeepSeek was also used, but none of the prompted code was used in the program.
+**Note: Due to free access limitations on models, ChatGPT, DeepSeek, & Claude were used in this program.**
 
 
 **CatL:** Create a racket tokenizer for the following grammar. May use parser-tools/lex. 
@@ -998,7 +997,7 @@ I'll enhance the parser to handle arithmetic expressions and comparisons. Here's
         $$
         ")
 
-**NOTE:** I started getting a bunch of errors, tokenize-input: unbound identifier in: tokenize-input, parse-expr is not defined in code, unbound identifier in: parse-stmt-list...But as I prompted ChatGPT to address the errors, it wouldn't update in place, causing parts of the program to be deleted, or updated without the rest of the code. I moved to Claude.
+**NOTE: I started getting a bunch of errors, tokenize-input: unbound identifier in: tokenize-input, parse-expr is not defined in code, unbound identifier in: parse-stmt-list...But as I prompted ChatGPT to address the errors, it wouldn't update in place, causing parts of the program to be deleted, or updated without the rest of the code. I moved to Claude.**
 
 **CatL:** I'm getting an error message for file1 that shouldn't occur. "Invalid character: $ at line 2, column 3"
 
@@ -1212,7 +1211,7 @@ I'll enhance the parser to handle arithmetic expressions and comparisons. Here's
                   (advance)) ; Consume semicolon but don't treat it as a statement
                 (cons stmt (parse-stmt-list)))))  ;; Recursively parse more statements
 
-**NOTE:** Though the program was now correctly parsing file1, it was missing the missing semicolon in File2. I ran out of free use of Claude, so I went back to ChatGPT.
+**NOTE: Though the program was now correctly parsing file1, it was missing the missing semicolon in File2. I ran out of free use of Claude, so I went back to ChatGPT.**
 
 **CatL:** My current parser is working well but is not identifying the missing semicolon on line 3.
 
