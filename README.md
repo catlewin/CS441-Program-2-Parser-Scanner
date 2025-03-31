@@ -1,6 +1,8 @@
 # CS441-Program-2-Parser-Scanner
 This is a parser for a simple grammar written in Racket through prompting AI models.
 
+Discussion document can be found in this repository or click [here](https://docs.google.com/document/d/1tghGYyjHnwpZntJjLf-CdSqQfFIY9pnM53fBpX84MLw/edit?usp=sharing) to view online.
+
 Below is the output and the AI prompts & generated code.
 
 ****
